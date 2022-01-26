@@ -14,12 +14,7 @@ def ask_url(url):
     header = {
         "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
     }
-    #如果挂节点需要使用代理
-    proxy = {
-        "http":"http://127.0.0.1:7890",
-        "https":"http://127.0.0.1:7890"
-    }
-    response = requests.get(url,timeout=3,proxies=proxy,headers=header)
+    response = requests.get(url,timeout=3,headers=header)
     return response.text
 
 #解析函数，返回需要转换的字典
